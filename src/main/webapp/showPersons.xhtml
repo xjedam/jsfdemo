@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	<ui:define name="content">
+	 <h2>#{msg.personAllLabel}</h2>
+    <h:form>
+      
+     <h:dataTable class="zebra-striped" value="#{personBean.allPersons}" var="item">
+      
+      <h:column>
+        <f:facet name="header">#{msg.personNameLabel}</f:facet>
+        #{item.name}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.personYobLabel}</f:facet>
+        #{item.yob}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.personEmailLabel}</f:facet>
+        #{item.email}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.action}</f:facet>
+        <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/> 
+      </h:column>
+      <h:column>
+        <f:facet name="header"></f:facet>
+        <h:commandLink value="#{msg.actionUpdate}" action="#{personBean.editPerson}" >   
+        </h:commandLink>
+      </h:column>
+      
+     </h:dataTable>
+      
+     <h:commandLink value="#{msg.personAddLabel}" class="btn success" action="add" />
+    </h:form>
+      
+	</ui:define>
+	
+</ui:composition>

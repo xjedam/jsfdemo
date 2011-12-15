@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view locale="#{localeBean.locale}">	
+<h:head>
+	<title><ui:insert name="windowTitle">#{msg.mainWindowTitle}</ui:insert></title>
+</h:head>
+<h:body>
+  <h:outputStylesheet library="css" name="default.css" target="body" />
+  
+	<div class="page-header">
+	 <div class="heading">
+	  <ui:insert name="heading">
+       #{msg.mainHeading}
+     </ui:insert>
+     <div class="lang">
+      <h:form>
+            <h:selectOneMenu value="#{localeBean.language}" onchange="submit()">
+                <f:selectItem itemValue="en" itemLabel="English" />
+                <f:selectItem itemValue="pl" itemLabel="Polski" />
+            </h:selectOneMenu>
+        </h:form> 
+     	</div>
+     </div>
+       	
+  </div>
+  <div class="container-fluid">
+	 <div class="sidebar">
+        
+  	 <div class="menu">
+	     <ui:insert name="menu">
+          <ui:include src="/views/main/menu.xhtml" />
+        </ui:insert>     
+     </div>
+   </div>     
+	 <div class="content">
+	   <ui:insert name="content" />
+   </div>
+	</div>
+</h:body>
+</f:view>
+</html>
