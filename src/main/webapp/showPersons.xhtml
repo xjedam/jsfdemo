@@ -27,6 +27,11 @@
       </h:column>
       
       <h:column>
+        <f:facet name="header">#{msg.personPeselLabel}</f:facet>
+        #{item.pesel}
+      </h:column>
+      
+      <h:column>
         <f:facet name="header">#{msg.action}</f:facet>
         <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/> 
       </h:column>

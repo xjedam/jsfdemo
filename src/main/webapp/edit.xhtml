@@ -14,6 +14,10 @@
 				<h:inputText id="yob" value="#{personBean.person.yob}" />
 				<h:outputText value="#{msg.personEmailLabel}" />
 				<h:inputText id="email" value="#{personBean.person.email}" />
+				<h:outputText value="#{msg.personPeselLabel}" />
+				<h:inputText id="pesel" value="#{personBean.person.pesel}" >
+					<f:validator validatorId="peselValidator" />
+				</h:inputText>
 				
 				<h:commandButton class="btn primary" value="#{msg.personFormOKButton}"
 					action="#{personBean.updatePerson}" >

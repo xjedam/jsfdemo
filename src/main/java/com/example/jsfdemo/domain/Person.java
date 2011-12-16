@@ -3,6 +3,7 @@ package com.example.jsfdemo.domain;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.faces.validator.FacesValidator;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
@@ -13,6 +14,7 @@ public class Person {
 	private String name = "unknown";
 	private String email = "unknown@unkno.wn";
 	private int yob = 1900;
+	private String pesel ="87120108438";
 	
 	@Size(min=3, max=30)
 	public String getName() {
@@ -35,6 +37,13 @@ public class Person {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getPesel() {
+		return pesel;
+	}
+	public void setPesel(String pesel) {
+		this.pesel = pesel;
 	}
 
 

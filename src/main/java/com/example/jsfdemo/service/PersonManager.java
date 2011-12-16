@@ -16,6 +16,7 @@ public class PersonManager {
 		newPerson.setName(person.getName());
 		newPerson.setYob(person.getYob());
 		newPerson.setEmail(person.getEmail());
+		newPerson.setPesel(person.getPesel());
 		db.add(newPerson);
 	}
 
@@ -34,7 +35,8 @@ public class PersonManager {
 		for (Person p : db) {
 			if (person.getName().equals(p.getName())
 					&& person.getYob() == p.getYob()
-					&& person.getEmail() == p.getEmail()) {
+					&& person.getEmail() == p.getEmail()
+					&& person.getPesel() == p.getPesel()) {
 				personToRemove = p;
 				break;
 			}
